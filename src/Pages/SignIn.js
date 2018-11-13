@@ -5,8 +5,32 @@ import { PasswordForgetLink } from "../Pages/PasswordForget";
 import { auth } from "../Firebase";
 
 const SignInPage = ({ history }) => (
-  <div>
-    <h1>SignIn</h1>
+  <div
+    style={{
+      position: "relative",
+      display: "inline-block",
+      maxWidth: 700,
+      minWidth: 500,
+      boxSizing: "border-box",
+      padding: 30,
+      backgroundColor: "#98b3cd",
+      borderRadius: 40,
+      margin: 40,
+      left: "25%"
+    }}
+  >
+    <h1
+      style={{
+        color: "blue",
+        fontWeight: 100,
+        letterSpacing: "0.01em",
+        marginLeft: 15,
+        marginBottom: 35,
+        textTransform: "uppercase"
+      }}
+    >
+      SignIn
+    </h1>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
@@ -61,17 +85,59 @@ class SignInForm extends Component {
             this.setState(updateByPropertyName("email", event.target.value))
           }
           type="text"
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            margin: 15,
+            fontSize: 20,
+            color: "#3186d4",
+            boxSizing: "border-box",
+            padding: "10px 15px",
+            borderRadius: "60px"
+          }}
           placeholder="Email Address"
         />
+        <br />
         <input
           value={password}
           onChange={event =>
             this.setState(updateByPropertyName("password", event.target.value))
           }
           type="password"
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            margin: 15,
+            fontSize: 20,
+            color: "#3186d4",
+            boxSizing: "border-box",
+            padding: "10px 15px",
+            borderRadius: "60px"
+          }}
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <br />
+        <button
+          disabled={isInvalid}
+          type="submit"
+          style={{
+            marginTop: 35,
+            margin: 15,
+            backgroundColor: "white",
+            border: "1px solid $red",
+            lineHeight: 0,
+            fontSize: 17,
+            display: "inline-block",
+            boxSizing: "border-box",
+            padding: "20px 15px ",
+            borderRadius: 60,
+            color: "blue",
+            fontWeight: 100,
+            letterSpacing: "0.01em",
+            position: "relative",
+            zIndex: 1
+          }}
+        >
           Sign In
         </button>
 
