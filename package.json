@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "css-loader": "^1.0.1",
     "firebase": "^5.5.5",
+    "font-awesome": "^4.7.0",
     "mobx": "^5.5.1",
     "mobx-react": "^5.3.6",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
+    "react-fontawesome": "^1.6.1",
     "react-radial-menu": "^0.1.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "^2.1.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
     "router": "^1.3.3"
@@ -23,5 +29,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@types/react-router-dom": "^4.3.1"
   }
 }
