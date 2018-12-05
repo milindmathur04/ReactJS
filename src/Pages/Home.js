@@ -1,45 +1,73 @@
 import React, { Component } from "react";
-import { inject, observer } from "mobx-react";
-import { compose } from "recompose";
-import withAuthorization from "../Pages/withAuthorization";
-import { db } from "../Firebase";
+import firebase from "firebase";
+// import { firebase } from "../Firebase";
+// import SignIn from "./SignIn";
 
-class HomePage extends Component {
+class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // emails: [
+      //   { id: 1, email: "mm@gmail.com" },
+      //   { id: 2, email: "mm@illinois.edu" }
+      // ],
+      brands: [],
+      user: {}
+    };
+  }
+  // componentDidMount() {
+  //   this.authListner();
+  // }
+  // authListner() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       this.setState({ user });
+  //       localStorage.setItem("user", user.uid);
+  //     } else {
+  //       this.setState({ user: null });
+  //       localStorage.removeItem("user");
+  //     }
+  //   });
+  // }
   componentDidMount() {
-    const { userStore } = this.props;
+    var query = firebase.database().ref();
+    var bra = [];
+    var that = this;
+    // query.once("value").then(function(snapshot) {
+    //   snapshot.forEach(function(childSnapshot) {
+    //     bra.push(childSnapshot.val().brand);
+    //   });
+    // });
+    this.firebaseCallback = query.on("value", snap => {
+      snap.forEach(function(childSnapshot) {
+        // this.setState({ brands: childSnapshot.val().brand });
+        bra.push(childSnapshot.val().brand);
 
-    db.onceGetUsers().then(snapshot => userStore.setUsers(snapshot.val()));
+        that.setState({ brands: bra });
+        // console.log(that.state.brands);
+      });
+    });
+    // var firebaseRef = firebase.database().ref();
+    // firebaseRef.once("value").then(function(dataSnapshot) {
+    //   that.setState({
+    //     brands: dataSnapshot.val()
+    //   });
+    // });
+    // console.log(bra);
+    // this.setState.brands = bra;
+    // this.setState({ brands: bra });
+    // console.log(this.state.brands);
   }
 
   render() {
-    const { users } = this.props.userStore;
-
     return (
       <div>
-        <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
-
-        {!!users && <UserList users={users} />}
+        <label>def3e</label>
+        <h1>{this.state.brands}</h1>
       </div>
     );
   }
 }
 
-const UserList = ({ users }) => (
-  <div>
-    <h2>List of Usernames of Users</h2>
-    <p>(Saved on Sign Up in Firebase Database)</p>
-
-    {Object.keys(users).map(key => (
-      <div key={key}>{users[key].username}</div>
-    ))}
-  </div>
-);
-
-const authCondition = authUser => !!authUser;
-
-export default compose(
-  withAuthorization(authCondition),
-  inject("userStore"),
-  observer
-)(HomePage);
+export default Home;

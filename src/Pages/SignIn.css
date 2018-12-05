@@ -1,0 +1,129 @@
+.button {
+  background: linear-gradient(to right, #4e4eff, #2727ff);
+  padding: 5px 40px;
+  margin-left: 34%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 1s;
+  background-color: #104e8b;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5em;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.button:hover {
+  opacity: 0.7;
+}
+#resetButton {
+  margin-top: 20px;
+  margin-left: 30%;
+}
+#signUpButton {
+  margin-top: 30px;
+  margin-left: 37%;
+}
+#password,
+#email,
+#emailText,
+#fullName,
+#emailSignUp,
+#pwdSignUp1,
+#pwdSignUp2 {
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  letter-spacing: 1px;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.04);
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "Ubuntu", cursive;
+}
+#password:focus,
+#email:focus,
+#emailText:focus,
+#fullName:focus,
+#emailSignUp:focus,
+#pwdSignUp1:focus,
+#pwdSignUp2:focus {
+  /*border: 2px solid rgba(0, 0, 0, 0.18) !important;*/
+  border: 2px solid rgba(59, 59, 255, 0.5) !important;
+  transition: border 1s;
+}
+#emailText,
+#fullName,
+#emailSignUp,
+#pwdSignUp1,
+#pwdSignUp2 {
+  width: 75%;
+  display: block;
+  margin-left: 12%;
+  margin-top: 25px;
+}
+h1 {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  color: #3b3bff;
+  /*text-transform: uppercase;*/
+  font-family: "Ubuntu", sans-serif;
+}
+#pwForget,
+#signup {
+  background-color: white;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  max-width: 700px;
+  min-width: 500px;
+  border-radius: 1.5em;
+  margin: 7em auto;
+  box-sizing: border-box;
+  padding: 30px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  margin-top: 0px;
+}
+#signInBox {
+  height: 400px;
+  margin-top: 0px;
+  margin-left: 15px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  position: relative;
+  display: inline-block;
+  max-width: 700px;
+  min-width: 500px;
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: white;
+  left: 25%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+}
+#forgot,
+#signUpText {
+  font-size: 15px;
+  text-align: center;
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  font-family: "Ubuntu", sans-serif;
+  /*padding: 15px;*/
+}
+#signUpText {
+  margin-bottom: 10px;
+}
+.container {
+  padding: 16px;
+  align-content: center;
+}

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { auth, db } from "../Firebase";
+import "./SignIn.css";
 
 const SignUpPage = ({ history }) => (
   <div>
-    <h1>SignUp</h1>
+    <h1>Sign Up</h1>
     <SignUpForm history={history} />
   </div>
 );
@@ -63,9 +64,12 @@ class SignUpForm extends Component {
       email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} class="container" id="signup">
         <input
+          id="fullName"
           value={username}
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Full Name")}
           onChange={event =>
             this.setState(updateByPropertyName("username", event.target.value))
           }
@@ -73,7 +77,10 @@ class SignUpForm extends Component {
           placeholder="Full Name"
         />
         <input
+          id="emailSignUp"
           value={email}
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Email Address")}
           onChange={event =>
             this.setState(updateByPropertyName("email", event.target.value))
           }
@@ -81,7 +88,10 @@ class SignUpForm extends Component {
           placeholder="Email Address"
         />
         <input
+          id="pwdSignUp1"
           value={passwordOne}
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Password")}
           onChange={event =>
             this.setState(
               updateByPropertyName("passwordOne", event.target.value)
@@ -91,7 +101,10 @@ class SignUpForm extends Component {
           placeholder="Password"
         />
         <input
+          id="pwdSignUp2"
           value={passwordTwo}
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Confirm Password")}
           onChange={event =>
             this.setState(
               updateByPropertyName("passwordTwo", event.target.value)
@@ -100,7 +113,12 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button
+          disabled={isInvalid}
+          type="submit"
+          id="signUpButton"
+          class="button"
+        >
           Sign Up
         </button>
 
@@ -111,11 +129,9 @@ class SignUpForm extends Component {
 }
 
 const SignUpLink = () => (
-  <p>
+  <p id="signUpText">
     Don't have an account? <Link to="/signup">Sign Up</Link>
   </p>
 );
-
 export default withRouter(SignUpPage);
-
 export { SignUpForm, SignUpLink };
