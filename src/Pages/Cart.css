@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Ubuntu', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Ubuntu')
+}
+body{
+    background-color: #98b3cd;
+}
+.title{
+    padding-top: 5px;
+    padding-bottom : 15px;
+    font-weight: bold;
+    font-size: 40px;
+    position:relative;
+    text-align:center;
+    width:100%;
+    font-family: 'Ubuntu', sans-serif;
+}

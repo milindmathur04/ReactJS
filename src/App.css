@@ -430,5 +430,8 @@
   top: 0;
   left: 0;
 }
-
+#signinpos, #logout{
+  /*color:black;*/
+  margin-left: 700px;
+}
 /* #endregion */

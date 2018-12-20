@@ -3,7 +3,7 @@ import React from "react";
 export default function AddButton(props) {
   return (
     <button
-      class="btn btn-primary"
+      class="btn btn-primary button"
       onClick={() => props.addToCart(props.product)}
     >
       Add to cart ({(props.cartItem && props.cartItem.quantity) || 0})

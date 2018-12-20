@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { SignUpLink } from "../Pages/SignUp";
-import { PasswordForgetLink } from "../Pages/PasswordForget";
+import { SignUpLink } from "./SignUp";
+import { PasswordForgetLink } from "./PasswordForget";
 import { auth } from "../Firebase";
 import "react-bootstrap";
 import "./SignIn.css";
@@ -80,10 +80,10 @@ class SignInForm extends Component {
           placeholder="Password"
         />
         <br />
-        <button class="button" disabled={isInvalid} type="submit">
+        <button class="btn btn-primary" id ="signinbutton" disabled={isInvalid} type="submit">
           Sign In
         </button>
-        {error && <p>{error.message}</p>}
+        {error && <p class="error">{error.message}</p>}
       </form>
     );
   }

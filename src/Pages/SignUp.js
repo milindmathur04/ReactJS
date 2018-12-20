@@ -116,13 +116,13 @@ class SignUpForm extends Component {
         <button
           disabled={isInvalid}
           type="submit"
-          id="signUpButton"
-          class="button"
+          id="signupbutton"
+          class="btn btn-primary"
         >
           Sign Up
         </button>
 
-        {error && <p>{error.message}</p>}
+        {error && <p class="error">{error.message}</p>}
       </form>
     );
   }

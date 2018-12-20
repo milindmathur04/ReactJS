@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import "./index.css";
 
 function sort(items) {
   return items.sort((a, b) => a.id < b.id);
@@ -7,23 +8,27 @@ function sort(items) {
 
 function Cart(props) {
   return (
-    <table>
+    <table id="cart">
       <thead>
         <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th />
-          <th />
+          <th class="item">Item </th>
+          <th class="item">Quantity</th>
+          <th class="item">Add</th>
+          <th class="item">Remove</th>
+          <th class="item">Remove All</th>
         </tr>
       </thead>
       <tbody>
         {sort(props.cart).map(item => (
           <tr>
-            <td>{item.name}</td>
-            <td>{item.quantity}</td>
+            <td class="items">{item.name}</td>
+            <td>
+              {item.quantity} 
+            </td>
             <td>
               <button
                 class="btn btn-primary"
+                id="btnidcart"
                 onClick={() => props.addToCart(item)}
               >
                 +
@@ -32,6 +37,7 @@ function Cart(props) {
             <td>
               <button
                 class="btn btn-warning"
+                id="btnidremovecart"
                 onClick={() => props.removeFromCart(item)}
               >
                 -
@@ -40,6 +46,7 @@ function Cart(props) {
             <td>
               <button
                 class="btn btn-danger"
+                id="btndanger"
                 onClick={() => props.removeAllFromCart(item)}
               >
                 Remove All from Cart
